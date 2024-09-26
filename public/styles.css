@@ -1,0 +1,150 @@
+
+body{
+    background: rgb(48, 54, 102);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center; 
+    width: 100%; 
+    margin: 20px 0;
+    color: bisque;
+    font-style: 'Arial', sans-serif;
+}
+
+
+#buscador {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+#buscador form {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px;
+}
+
+#buscador .search{
+    width: 250px;
+    height: 22px;
+    text-align: justify;
+}
+
+#buscador .input {
+    display: flex;
+    flex-direction: column;
+}
+
+button#buscar {
+    padding: 10px 20px;
+    background-color: #8a3131;
+    color: rgb(197, 197, 197);
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+    width: 75px;
+    height: 29px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 17px;
+}
+
+button#buscar:hover {
+    background-color: #555;
+}
+
+#departamento{
+    width: 275px;
+    height: 27px;
+}
+
+#font-depto{
+    color: bisque;
+    font-size: 22px;
+    font-style: 'Arial', sans-serif;
+}
+
+#grilla {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 15px;
+}
+
+.objeto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: rgb(72, 72, 128);
+}
+
+.objeto img {
+    width: 100%;
+    height: 480px;
+}
+
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+    display: none;
+}
+
+#pagination button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+#pagination button:hover {
+    background-color: #ddd;
+}
+
+#pagination button.active {
+    background-color: #333; 
+    color: white; 
+    cursor: auto; 
+}
+
+.no-results {
+    text-align: center;      
+    color: bisque;          
+    font-size: 24px;        
+    font-weight: bold;      
+    margin-top: 50px;       
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 200px;           
+}
+
+
+.titulo{
+    font-size: 20px;
+    font-style: 'Arial', sans-serif;
+    color: bisque;
+}
+
+.cultura{
+    font-size: 20px;
+    font-style: 'Arial', sans-serif;
+    color: bisque;
+}
+
+.dinastia{
+    font-size: 20px;
+    font-style: 'Arial', sans-serif;
+    color: bisque;
+}
