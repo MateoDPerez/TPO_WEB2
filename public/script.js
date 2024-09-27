@@ -18,7 +18,7 @@ function fetchDeptos() {
             defaultOption.value = ""; 
             defaultOption.textContent = "Select department";
             defaultOption.selected = true; 
-            defaultOption.disabled = true; 
+             defaultOption.disabled = true;   
             deptos.appendChild(defaultOption);
 
             data.departments.forEach((item) => {
@@ -33,9 +33,9 @@ function fetchDeptos() {
 fetchDeptos();
 
 function fetchObjects(objectIDs) {
-    let objetosHtml = '';
+    let objetosHtml = '';  
 
-    document.getElementById("grilla").innerHTML = '';
+    document.getElementById("grilla").innerHTML = ''; 
 
     const slicedObjectIDs = objectIDs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
@@ -43,9 +43,9 @@ function fetchObjects(objectIDs) {
         fetch(URLObjectIDs + objectId)
             .then((response) => response.json())
             .then((data) => {
-                if (data.primaryImageSmall) { // Solo mostrar si hay imagen
+                if (data.primaryImageSmall) { 
                     objetosHtml += `<div class="objeto">
-                                        <img src="${data.primaryImageSmall}" alt="${data.title}"/>
+                                        <img src="${data.primaryImageSmall}"/>
                                         <h4 class="titulo">${data.title}</h4> 
                                         <h6 class="cultura">${data.culture ? data.culture : 'sin datos'}</h6>
                                         <h6 class="dinastia">${data.dynasty ? data.dynasty : 'sin datos'}</h6>
@@ -56,13 +56,14 @@ function fetchObjects(objectIDs) {
     });
 }
 
+
 document.getElementById("buscar").addEventListener("click", (event) => {
     event.preventDefault(); 
 
     const departamento = document.getElementById('departamento').value;
     const keyword = document.getElementById('keyword').value;
 
-    // Check que al menos un campo de búsqueda esté lleno
+   // checkeamos que haya al menos un campo lleno para la búsqueda
     if (departamento || keyword) {
         const query = `${URLSearch}?q=${keyword}&departmentId=${departamento}&hasImages=true`;
 
@@ -85,18 +86,18 @@ document.getElementById("buscar").addEventListener("click", (event) => {
     }
 });
 
+
 function updatePagination(objectIDs) {
     const totalPages = Math.ceil(objectIDs.length / itemsPerPage);
     const paginationHtml = document.getElementById("pagination");
 
-    // ocultamos la paginacion si no hay mas de 20 objetos
     if (totalPages <= 1) {
         paginationHtml.style.display = 'none';
         return;
     } else {
-        paginationHtml.style.display = 'flex'; 
+        paginationHtml.style.display = 'flex';
     }
- 
+    
     paginationHtml.innerHTML = ''; 
     
     for (let i = 1; i <= totalPages; i++) {
@@ -121,6 +122,7 @@ function updatePagination(objectIDs) {
         paginationHtml.appendChild(pageButton);
     }
 }
+
 
 
 fetch(URLSearchHasImage)
